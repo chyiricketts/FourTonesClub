@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --base: #FFFFFF;
+    --title-color: #000000;
+    --text-color: #000000;
+    --grey-shadow: #505050;
+    --accent-pink: #E90074;
+    --accent-two: #50038f;
+  
+    --shadow: 0.3rem 0.3rem 0.6rem var(--grey-shadow), 
+              -0.2rem -0.2rem 0.5rem var(--grey-shadow);
+    --inner-shadow: inset 0.2rem 0.2rem 0.5rem var(--pink), 
+                    inset -0.2rem -0.2rem 0.5rem var(--white);
+}
+
+.dark-theme {
+    --base: #000000;
+    --title-color: #E90074;
+    --text-color: #FFFFFF;
+    --accent-two: #FFF078;
+
+    --shadow: 0.3rem 0.3rem 0.6rem var(--accent-pink), 
+    -0.2rem -0.2rem 0.5rem var(--accent-pink);
+}
+  
+.dark-theme .theme-switch {
+    background: var(--base);
+    color: var(--text-color);
+}
+
+.dark-theme .logo {
+    transform: rotate(360deg);
+    transition: transform 0.5s;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: var(--base);
+    overflow-x: hidden;
+    width: 100%;
+    font-size: 16px;
+  
+    @media screen and (min-width: 900px) {
+      font-size: 75%;
+    }
+}
+
+body {
+    background-color: var(--base);
+    color: var(--text-color);
+    transition: 0.5s background ease;
+}
+
+#title-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    color: var(--title-color);
+}
+
+#title-area h1 {
+    font-size: 2.5rem;
+}
+
+.logo img{
+    width: 300px;
+    height: auto;
+}
+
+.logo {
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    #title-area {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #title-area h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    #title-area h2 {
+        font-size: 1rem;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+
+    #title-area .logo img{
+        width: 200px;
+        height: auto;
+        padding-top: 0px;
+    }
+}
+
+
+
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    box-shadow: var(--shadow);
+}
+  
+ul {
+    display: flex;
+    list-style-type: none;
+    
+    a {
+      margin: 10px 30px;
+      position: relative;
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      color: var(--accent-two);
+      text-transform: uppercase;
+      text-decoration: none;
+      justify-content: space-between; /* Distribute space between items */
+
+
+
+  
+      &:before {
+        position: absolute;
+        bottom: -2px;
+        content: '';
+        width: 100%;
+        height: 3px;
+        background: var(--accent-pink);
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+  
+      &:hover {
+        &:before {
+          opacity: 1;
+          transition: 0.5s transform ease, 0.8s opacity ease;
+          transform: translateX(0);
+        }
+      }
+    }
+  
+    .active {
+      color: var(--accent-pink);
+  
+      &:hover {
+        &:before {
+          opacity: 0;
+        }
+      }
+    }
+}
+
+@media (max-width: 768px) {
+    ul {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items vertically */
+    }
+  
+    ul a {
+      padding: 15px 30px; /* Increase padding for better spacing in vertical layout */
+    }
+  }
+  
+
+.body-main {
+    text-align: center;
+}
+
+.body-main h1 {
+    margin-top: 50px;
+    padding: 20px;
+}
+.body-main p {
+    padding: 15px;
+    margin: 10px;
+}
+
+
+
+
+
+
+
+.process-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--base);
+}
+
+.exec_member .activity {
+    display: flex;
+    width: 267px;
+    margin: 15px 10px 10px;
+    background-color: var(--accent-pink);
+    cursor: pointer;
+    transition: 1s;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.exec_member .activity .relative-block {
+    width: 100%;
+    min-height: 350px;
+}
+.relative-block {
+    position: relative;
+}
+
+.activity-icon img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;  /* Initially visible */
+    transition: opacity 1s ease-out;  /* Smooth transition for opacity */
+    width: 70%;
+    float: right;
+    border-radius: 12px; /* Adjust the value as needed */
+}
+
+.exec_member .activity:hover .activity-icon img {
+    opacity: 0;
+}
+
+.exec_member .inactive {
+    padding: 20px;
+}
+
+.exec_member .inactive .inactive_container {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    font-size: 1.5rem;
+    color: var(--text-color)
+}
+
+.exec_member .inactive .top-wrap {
+    flex: 0 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.exec_member .inactive .space {
+    flex: 1;
+    display: flex;
+}
+
+.exec_member .inactive .bottom-wrap {
+    flex: 0 0 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+.exec_member .activity .active {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    min-height: 100%;
+    padding: 25px 30px 50px;
+}
+.exec_member .activity .active .title {
+    color: #1f1f1f;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.exec_member .activity .active .sub-title {
+    color: #1f1f1f;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 32px;
+}
+.exec_member .activity .active .caption {
+    margin-top: 10px;
+    color: #616161;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: left;
+}
+.exec_member .activity .active .ul {
+    margin-bottom: 45px;
+    margin-top: 10px;
+}
+.exec_member .activity .active .li {
+    display: flex;
+    margin-left: 30px;
+    color: #616161;
+    font-size: 16px;
+    line-height: 26px;
+}
+.exec_member .activity .active .li:before {
+    position: absolute;
+    content: "\f00c";
+    color: #e2b921;
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: -1.6em;
+    width: 22px;
+}
+.exec_member .activity:hover {
+    width: 558px;
+    background-color: #fff;
+}
+.exec_member .activity:hover .inactive {
+    display: none;
+}
+.exec_member .activity:hover .active {
+    display: flex;
+    width: 340px;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+.process-row {
+flex-direction: column;
+}
+
+.exec_member .inactive .title{
+font-size: 1.5rem;
+}
+
+.exec_member .activity {
+width: 93%;
+}
+.exec_member .activity .active{
+width: 93%;
+}
+
+.exec_member .activity .active .sub-title {
+font-size: 1em;
+
+}
+
+.exec_member .activity .active .title {
+font-size: 1.2rem;
+font-weight: bold;
+}
+
+.exec_member .activity .relative-block {
+min-height: 100%;
+}
+
+.exec_member .activity:hover {
+width: 98%;
+    margin-left:2px;
+    margin-right:10px;
+}
+
+}
+
+@media only screen and (max-width: 400px){
+.activity-icon img {
+width: 30%;
+}
+.exec_member .activity .active .sub-title {
+font-size: .7em;
+
+}
+}
+
+
+
+
+
+
+
+
+footer {
+    width: 100%;
+    background: var(--base); /* Match existing background */
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: var(--shadow)
+}
+
+footer h1 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.icon-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.icon-container button img {
+    width: 60px;
+    height: 60px;
+    filter: grayscale(30%); /* Slightly muted color */
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.icon-container button:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+footer p {
+    font-size: 14px;
+    color: #666;
+    margin: 0.2rem 0;
+}

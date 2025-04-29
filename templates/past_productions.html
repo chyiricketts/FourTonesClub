@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>4Tones Past Productions</title>
+    <link rel="stylesheet" href="../static/css/past_productions.css">
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+  <div id="title-area">
+    <div class = "logo">
+      <img src="../static/images/logo.png" alt="Four Tones Musical Club Logo">
+    </div>
+    <div id="title">
+          <h1>Four Tones Musical Club</h1>
+          <h2>Past Productions</h2>
+    </div>
+  </div>
+
+  <div class="navigation">
+    <ul>
+      <a href="index.html" class="active">Home</a>
+      <a href="execboard2.html">Executive Board</a>
+      <a href="curr_production.html">Current Production</a>
+      <a href="past_productions.html">Past Productions</a>
+      <a href="constitution.html">Bylaws</a>
+      <a href="member.html">Member Portal</a>
+    </ul>
+  </div>
+
+</div>
+
+<div class="body-main">
+  <h1>Past Productions</h1>
+  <section class="timeline">
+    <ol>
+      <li>
+        <div class="item-inner">
+          <div class="time-wrapper">
+            <time>The Addams Family<small>Spring 2025</small></time>
+          </div>
+          <div class="details">
+            <h3></h3>
+            <p></p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="item-inner">
+          <div class="time-wrapper">
+            <time>Little Shop of Horrors<small>Fall 2024</small></time>
+          </div>
+          <div class="details">
+            <h3></h3>
+            <p></p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="item-inner">
+          <div class="time-wrapper">
+            <time>Now. Here. This<small>Fall 2024</small></time>
+          </div>
+          <div class="details">
+            <h3></h3>
+            <p></p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="item-inner">
+          <div class="time-wrapper">
+            <time>IRB Barcelona <small>04.2022 - 06.2022</small></time>
+          </div>
+          <div class="details">
+            <h3></h3>
+            <p></p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="item-inner">
+          <div class="time-wrapper">
+            <time>Rutger Waksman WISE <small>07.2019 - 08.2019</small></time>
+          </div>
+          <div class="details">
+            <h3></h3>
+            <p>Attended lab for a full workday to learn basic molecular biology techniques through the discovery and publication of novel lemna minor (duckweed) sequences.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="item-inner">
+          <div class="time-wrapper">
+            <time>Raritan Headwaters Association <small>05.2016 - 08.2021</small></time>
+          </div>
+          <div class="details">
+            <h3></h3>
+            <p>Performed a quarterly biological and chemical assessment of a total of 18 sites on several local streams. Biological assessment consisted of surveying the ecology and assessing the quantity of aquatic fauna. Chemical assessment consisted of either bringing water samples to a testing lab to analyze key chemical properties (i.e. DO, nitrates, pH, phosphates, etc.) or fine-tune calibration of a water quality meter. 
+            </p>
+          </div>
+        </div>
+      </li>
+    </ol>
+  
+  </section>
+
+</div>
+
+
+<script>
+// Check if the dark-theme class is saved in localStorage when the page loads
+$(document).ready(function() {
+  if (localStorage.getItem('theme') === 'dark') {
+    $('body').addClass('dark-theme');
+  }
+
+  // Toggle dark mode on logo click and save the preference
+  $(".logo").on("click", () => {
+    $("body").toggleClass("dark-theme");
+
+    // Save the current theme preference to localStorage
+    if ($("body").hasClass("dark-theme")) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+});
+</script>
+
+<script src="../js/past_productions.js"></script>
+
+
+</body>
+
+
+<footer>
+  <h1></h1>
+  <div class = "icon-container">
+      <button onclick="window.open('https://github.com/chyiricketts', '_blank');">
+          <img src = "footerimg\github.svg" alt = "Github icon">
+      </button>
+      <button onclick="window.location.href='mailto:chyi.ricketts@gmail.com';">
+          <img src = "footerimg\mail.svg" alt = "Email icon">
+      </button>
+      <button onclick="window.open('https://www.facebook.com/chyi.ricketts', '_blank');">
+          <img src = "footerimg\facebook.svg" alt = "Facebook icon">
+      </button>
+      <button onclick="window.open('www.linkedin.com/in/chyi-ricketts', '_blank');">
+          <img src = "footerimg\linkedin.svg" alt = "Linkedin icon">
+      </button>
+  </div>
+  <p>Signature Work</p>
+  <p>@Chyi Ricketts</p>
+</footer>
+
+</html>

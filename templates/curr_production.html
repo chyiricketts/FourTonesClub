@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>4Tones Current Production</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+  <div id="title-area">
+    <div class = "logo">
+      <img src="../static/images/logo.png" alt="Four Tones Musical Club Logo">
+    </div>
+    <div id="title">
+          <h1>Four Tones Musical Club</h1>
+          <h2>Current Production</h2>
+    </div>
+  </div>
+
+  <div class="navigation">
+    <ul>
+      <a href="index.html">Home</a>
+      <a href="execboard2.html">Executive Board</a>
+      <a href="curr_production.html" class="active">Current Production</a>
+      <a href="past_productions.html">Past Productions</a>
+      <a href="constitution.html">Bylaws</a>
+      <a href="member.html">Member Portal</a>
+    </ul>
+  </div>
+
+</div>
+
+<div class="body-main">
+  <h1>Is currently being decided for the Fall 2025 Semester</h1>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam distinctio consequatur temporibus nemo! Cum, sunt eveniet quisquam provident repellat molestiae illo corrupti debitis! Similique, maxime nesciunt dolor porro voluptas doloremque.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo repellendus dicta totam molestiae delectus, odio doloribus ad veniam? Praesentium neque, quo alias blanditiis ipsa voluptatum itaque dolore. Ex, enim cumque!</p>
+  <br>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quos aliquid inventore praesentium dicta aspernatur assumenda quam architecto sed illum labore esse temporibus maiores optio amet tempore dolorem, nisi ratione?</p>
+</div>
+
+
+<script>
+// Check if the dark-theme class is saved in localStorage when the page loads
+$(document).ready(function() {
+  if (localStorage.getItem('theme') === 'dark') {
+    $('body').addClass('dark-theme');
+  }
+
+  // Toggle dark mode on logo click and save the preference
+  $(".logo").on("click", () => {
+    $("body").toggleClass("dark-theme");
+
+    // Save the current theme preference to localStorage
+    if ($("body").hasClass("dark-theme")) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+});
+</script>
+
+</body>
+
+
+<footer>
+  <h1></h1>
+  <div class = "icon-container">
+      <button onclick="window.open('https://github.com/chyiricketts', '_blank');">
+          <img src = "footerimg\github.svg" alt = "Github icon">
+      </button>
+      <button onclick="window.location.href='mailto:chyi.ricketts@gmail.com';">
+          <img src = "footerimg\mail.svg" alt = "Email icon">
+      </button>
+      <button onclick="window.open('https://www.facebook.com/chyi.ricketts', '_blank');">
+          <img src = "footerimg\facebook.svg" alt = "Facebook icon">
+      </button>
+      <button onclick="window.open('www.linkedin.com/in/chyi-ricketts', '_blank');">
+          <img src = "footerimg\linkedin.svg" alt = "Linkedin icon">
+      </button>
+  </div>
+  <p>Signature Work</p>
+  <p>@Chyi Ricketts</p>
+</footer>
+
+</html>
